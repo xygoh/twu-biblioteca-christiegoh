@@ -1,11 +1,11 @@
 package com.twu.biblioteca;
 
 public class Book {
-    int id;
-    String title;
-    int year;
-    Author author;
-    int quantity;
+    private int id;
+    private String title;
+    private int year;
+    private Author author;
+    private int quantity;
 
     public Book(int id, String title, int year, Author author, int quantity) {
         this.id = id;
@@ -21,5 +21,17 @@ public class Book {
 
     public String getAuthor() {
         return author.firstName + " " + author.lastName;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public int getQuantity() {
+        return quantity;
     }
 }

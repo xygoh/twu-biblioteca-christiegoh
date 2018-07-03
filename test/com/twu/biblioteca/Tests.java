@@ -30,7 +30,7 @@ public class Tests {
     // Book Details
     // Main Menu
     // Invalid Menu Option
-    // Quit
+    // Quitn
     // Checkout book
     // Successful checkout
     // Unsuccessful Checkout
