@@ -3,11 +3,13 @@ package com.twu.biblioteca;
 public class BibliotecaApp {
 
     public static void main(String[] args) {
-        start();
+        Biblioteca b = new Biblioteca();
+        start(b);
     }
 
-    private static void start(){
+    private static void start(Biblioteca b){
         printWelcomeMessage();
+        b.listBooks();
     }
 
     private static void printWelcomeMessage(){

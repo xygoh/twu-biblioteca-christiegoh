@@ -20,14 +20,14 @@ public class Tests {
         assertEquals( " ~ Welcome to Biblioteca ~ \n",sor.getLog());
     }
 
-    // List Books
+    /* List Books: tested in biblioteca test
     @Test
     public void testListBooks(){
         String[] booklist= new String[2];
         assertEquals(new String[]{"book1","book2"},booklist);
-    }
-
-    // Book Details
+    }*/
+    // Book Details: same as above
+    
     // Main Menu
     // Invalid Menu Option
     // Quitn
