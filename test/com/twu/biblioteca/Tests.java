@@ -16,7 +16,7 @@ public class Tests {
     @Test
     public void testWelcomeMessage(){
         // check log for welcome message
-        BibliotecaApp.main(new String[] {"a1","a2","a3"});
+        BibliotecaApp.main(new String[] {});
         Assert.assertEquals( " ~ Welcome to Biblioteca ~ \n",sor.getLog());
     }
 
