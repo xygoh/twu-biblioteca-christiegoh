@@ -7,7 +7,6 @@ public class Biblioteca {
     List<Book> library;
     List<Author> authorList;
 
-
     public Biblioteca(){
         this.library = new ArrayList<Book>();
         this.authorList = new ArrayList<Author>();
@@ -31,6 +30,7 @@ public class Biblioteca {
         System.out.println("id\tTitle\t\t\tAuthor\t\t\t\tYear Published");
         System.out.println("------------------------------------------------------");
         for(Book b:library){
+            // book to string record method
             int id = b.getId();
             String title = b.getTitle();
             String author = b.getAuthor();
