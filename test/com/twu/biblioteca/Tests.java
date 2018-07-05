@@ -16,7 +16,6 @@ public class Tests {
     @Rule
     public final TextFromStandardInputStream si = TextFromStandardInputStream.emptyStandardInputStream();
 
-
     // Welcome Message
     @Test
     public void testWelcomeMessage(){
@@ -49,6 +48,22 @@ public class Tests {
         assertTrue(sor.getLog().contains("Invalid Option"));
     }
     // Successful Return
+    @Test
+    public void testSuccessfulReturn(){
+        Biblioteca b = new Biblioteca();
+        MainMenu m = new MainMenu(b);
+        si.provideLines("5");
+        m.run();
+        assertTrue(sor.getLog().contains("Thank you for returning the book"));
+    }
     // Unsuccessful Return
+    @Test
+    public void testUnsuccessfulReturn(){
+        Biblioteca b = new Biblioteca();
+        MainMenu m = new MainMenu(b);
+        si.provideLines("5");
+        m.run();
+        assertTrue(sor.getLog().contains("That is not a valid book to return"));
+    }
 
 }
