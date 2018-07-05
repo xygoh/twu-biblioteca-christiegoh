@@ -45,11 +45,11 @@ public class Tests {
         Biblioteca b = new Biblioteca();
         MainMenu m = new MainMenu(b);
         si.provideLines("100");
-        //Scanner scanner = new Scanner(System.in);
         m.run();
         assertTrue(sor.getLog().contains("Invalid Option"));
     }
-    // Quitn
+    // Quit
+
     // Checkout book
     // Successful checkout
     // Unsuccessful Checkout

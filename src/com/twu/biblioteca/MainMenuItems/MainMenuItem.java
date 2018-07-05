@@ -5,13 +5,10 @@ import com.twu.biblioteca.Biblioteca;
 abstract public class MainMenuItem {
     private int index;
     private String name;
-    protected Biblioteca biblioteca;
 
-
-    public MainMenuItem(int index, String name, Biblioteca b) {
+    public MainMenuItem(int index, String name) {
         this.index = index-1;
         this.name = name;
-        this.biblioteca = b;
     }
 
     public String getName(){
