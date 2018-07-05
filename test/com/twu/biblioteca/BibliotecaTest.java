@@ -10,7 +10,6 @@ import static org.junit.Assert.*;
 public class BibliotecaTest {
     Biblioteca biblioteca;
     ArrayList<Book> books = new ArrayList<Book>();
-    ArrayList<Author> authors = new ArrayList<Author>();
 
     @Rule
     public final SystemOutRule sor = new SystemOutRule().enableLog();
@@ -21,19 +20,13 @@ public class BibliotecaTest {
             Author a = new Author(i,"Luffy","Monkey",new ArrayList<>());
             Book b = new Book(i,"Book "+Integer.toString(i),1990+i,a,true);
             books.add(b);
-            authors.add(a);
         }
-        biblioteca = new Biblioteca(books,authors);
+        biblioteca = new Biblioteca(books);
     }
 
     @Test
-    public void getLibrary() {
-        assertEquals(books,biblioteca.getLibrary());
-    }
-
-    @Test
-    public void getAuthorList() {
-        assertEquals(authors,biblioteca.getAuthorList());
+    public void testConstruction(){
+        assertEquals(3, biblioteca.getLibrary().size());
     }
 
     @Test

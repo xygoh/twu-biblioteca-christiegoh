@@ -5,24 +5,17 @@ import java.util.ArrayList;
 
 public class Biblioteca {
     List<Book> library; // master list of books
-    List<Author> authorList;
 
     public Biblioteca(){
         this.library = new ArrayList<Book>();
-        this.authorList = new ArrayList<Author>();
     }
 
-    public Biblioteca(List<Book> library, List<Author> authorList) {
+    public Biblioteca(List<Book> library) {
         this.library = library;
-        this.authorList = authorList;
     }
 
     public List<Book> getLibrary() {
         return library;
-    }
-
-    public List<Author> getAuthorList() {
-        return authorList;
     }
 
     public void defaultSetupBooks(){
@@ -37,7 +30,7 @@ public class Biblioteca {
         a.addBooks(library);
     }
 
-    // Prints list of books <id, Title , author, year published>
+    // Prints list of books <Title , author, year published>
     public void listBooks(){
         String format = "%-50s%-50s%s%n";
         System.out.println("");

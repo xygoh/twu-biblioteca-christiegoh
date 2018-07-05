@@ -38,34 +38,5 @@ public class Tests {
         BibliotecaApp.main(new String[] {});
         assertTrue(sor.getLog().contains("MENU"));
     }
-    // Invalid Menu Option
-    @Test
-    public void testInvalidMenuOption(){
-        Biblioteca b = new Biblioteca();
-        MainMenu m = new MainMenu(b);
-        si.provideLines("100");
-        m.run();
-        assertTrue(sor.getLog().contains("Invalid Option"));
-    }
-    // Successful Return
-    @Test
-    public void testSuccessfulReturn(){
-        Biblioteca b = new Biblioteca();
-        b.defaultSetupBooks();
-        MainMenu m = new MainMenu(b);
-        si.provideLines("4\nBeing Handsome");
-        m.run();
-        assertTrue(sor.getLog().contains("Thank you for returning the book"));
-    }
-    // Unsuccessful Return
-    @Test
-    public void testUnsuccessfulReturn(){
-        Biblioteca b = new Biblioteca();
-        b.defaultSetupBooks();
-        MainMenu m = new MainMenu(b);
-        si.provideLines("4\nTop 10 Clarinet Hits");
-        m.run();
-        assertTrue(sor.getLog().contains("That is not a valid book"));
-    }
 
 }
