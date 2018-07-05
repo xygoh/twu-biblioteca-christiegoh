@@ -39,18 +39,18 @@ public class Biblioteca {
 
     // Prints list of books <id, Title , author, year published>
     public void listBooks(){
-        System.out.println("id\tTitle\t\t\tAuthor\t\t\t\tYear Published");
-        System.out.println("------------------------------------------------------");
+        String format = "%-50s%-50s%s%n";
+        System.out.println("");
+        System.out.printf(format,"Title","Author","Year Published");
+        //System.out.println("Title\tAuthor\t\t\t\tYear Published");
+        System.out.println("----------------------------------------------------------------------------------------------------------------------");
         for(Book b:library){
-            // book to string record method
-            int id = b.getId();
             String title = b.getTitle();
             String author = b.getAuthor();
-            int year = b.getYear();
-
-            System.out.println(id+"\t"+title+"\t\t\t"+author+"\t\t\t"+year);
+            String year = Integer.toString(b.getYear());
+            System.out.printf(format,title,author,year);
         }
-        System.out.println("------------------------------------------------------");
+        System.out.println("----------------------------------------------------------------------------------------------------------------------");
     }
 
     public Book searchLibrary(String bookTitle){

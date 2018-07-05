@@ -38,12 +38,12 @@ public class BibliotecaTest {
 
     @Test
     public void listBooks() {
-        String expected = "id\tTitle\t\t\tAuthor\t\t\t\tYear Published\n" +
-                "------------------------------------------------------\n" +
-                "1\tBook 1\t\t\tLuffy Monkey\t\t\t1991\n" +
-                "2\tBook 2\t\t\tLuffy Monkey\t\t\t1992\n" +
-                "3\tBook 3\t\t\tLuffy Monkey\t\t\t1993\n" +
-                "------------------------------------------------------\n";
+        String expected = "\nTitle                                             Author                                            Year Published\n" +
+                "----------------------------------------------------------------------------------------------------------------------\n" +
+                "Book 1                                            Luffy Monkey                                      1991\n" +
+                "Book 2                                            Luffy Monkey                                      1992\n" +
+                "Book 3                                            Luffy Monkey                                      1993\n" +
+                "----------------------------------------------------------------------------------------------------------------------\n";
         biblioteca.listBooks();
         assertEquals(expected,sor.getLog());
     }
