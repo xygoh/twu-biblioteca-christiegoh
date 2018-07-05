@@ -10,13 +10,10 @@ public class BibliotecaApp {
 
     private static void start(Biblioteca b, MainMenu m){
         printWelcomeMessage();
-        b.listBooks();
-        //m.listOptions();
         m.run();
     }
 
     private static void printWelcomeMessage(){
         System.out.println(" ~ Welcome to Biblioteca ~ ");
-        System.out.println("");
     }
 }
