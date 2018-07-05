@@ -1,5 +1,6 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.MainMenuItems.CheckOutOption;
 import com.twu.biblioteca.MainMenuItems.ListBooksOption;
 import com.twu.biblioteca.MainMenuItems.MainMenuItem;
 import com.twu.biblioteca.MainMenuItems.QuitOption;
@@ -20,9 +21,11 @@ public class MainMenu {
         this.menuOptions = new ArrayList<MainMenuItem>();
         this.biblioteca = biblioteca;
         MainMenuItem m = new ListBooksOption(itemCounter,"List Books",biblioteca);
-        MainMenuItem m1 = new QuitOption(itemCounter++,"Quit");
+        MainMenuItem m1 = new QuitOption(itemCounter+=1,"Quit");
+        MainMenuItem m2 = new CheckOutOption(itemCounter+=1,"Checkout",biblioteca);
         menuOptions.add(m);
         menuOptions.add(m1);
+        menuOptions.add(m2);
         itemCounter++;
     }
 

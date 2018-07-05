@@ -5,14 +5,15 @@ public class Book {
     private String title;
     private int year;
     private Author author;
-    private int quantity;
+    private boolean available;
+    private User user=null;
 
-    public Book(int id, String title, int year, Author author, int quantity) {
+    public Book(int id, String title, int year, Author author, boolean available) {
         this.id = id;
         this.title = title;
         this.year = year;
         this.author = author;
-        this.quantity = quantity;
+        this.available = available;
     }
 
     public String getTitle() {
@@ -31,7 +32,17 @@ public class Book {
         return year;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public boolean isAvailable(){
+        return available;
+    }
+
+    public void checkOut(User u){
+        available = false;
+        user = u;
+    }
+
+    public void checkIn(){
+        available = true;
+        user = null;
     }
 }

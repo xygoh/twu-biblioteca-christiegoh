@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
 public class BookTest {
     List<Book> books = new ArrayList<Book>();
     Author a = new Author(1,"Mr","Krabs",books);
-    Book b = new Book(1,"The Secret Formula",1980,a,1);
+    Book b = new Book(1,"The Secret Formula",1980,a,true);
 
     @Before
     public void setup(){

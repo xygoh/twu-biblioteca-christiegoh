@@ -19,11 +19,10 @@ public class BibliotecaTest {
     public void setup(){
         for(int i=1;i<=3;i++){
             Author a = new Author(i,"Luffy","Monkey",new ArrayList<>());
-            Book b = new Book(i,"Book "+Integer.toString(i),1990+i,a,1);
+            Book b = new Book(i,"Book "+Integer.toString(i),1990+i,a,true);
             books.add(b);
             authors.add(a);
         }
-
         biblioteca = new Biblioteca(books,authors);
     }
 

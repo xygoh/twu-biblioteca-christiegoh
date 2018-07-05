@@ -51,9 +51,26 @@ public class Tests {
     // Quit
 
     // Checkout book
-    // Successful checkout
-    // Unsuccessful Checkout
-    // Return Book
+    @Test
+    public void testCheckOutBook(){
+        Biblioteca b = new Biblioteca();
+        b.defaultSetupBooks();
+        MainMenu m = new MainMenu(b);
+        si.provideLines("3\nI Heart Dancing");
+        m.run();
+        assertTrue(sor.getLog().contains("Thank you! Enjoy your book"));
+    }
+
+    @Test
+    public void testCheckedOutBookNotListedInBookList(){
+        Biblioteca b = new Biblioteca();
+        b.defaultSetupBooks();
+        MainMenu m = new MainMenu(b);
+        si.provideLines("3\nNo, this is Patrick");
+        m.run();
+        assertTrue(sor.getLog().contains("Unsuccessful Checkout"));
+    }
+
     // Successful Return
     // Unsuccessful Return
 
