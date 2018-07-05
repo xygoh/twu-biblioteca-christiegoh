@@ -48,18 +48,7 @@ public class Tests {
         m.run();
         assertTrue(sor.getLog().contains("Invalid Option"));
     }
-    // Quit
 
-    // Checkout book
-    @Test
-    public void testCheckOutBook(){
-        Biblioteca b = new Biblioteca();
-        b.defaultSetupBooks();
-        MainMenu m = new MainMenu(b);
-        si.provideLines("3\nI Heart Dancing");
-        m.run();
-        assertTrue(sor.getLog().contains("Thank you! Enjoy your book"));
-    }
 
     @Test
     public void testCheckedOutBookNotListedInBookList(){
