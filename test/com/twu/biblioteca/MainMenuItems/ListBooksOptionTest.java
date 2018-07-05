@@ -28,14 +28,13 @@ public class ListBooksOptionTest {
     }
 
     @Test
-    public void testBooksListed(){
+    public void testBooksOnlyAvailableBooksListed(){
         si.provideLines("1");
         m.run();
         assertTrue(sor.getLog().contains("\nTitle                                             Author                                            Year Published\n" +
                 "----------------------------------------------------------------------------------------------------------------------\n" +
                 "I Heart Dancing                                   Squilliam Fancyson                                1999\n" +
                 "Top 10 Oboe Hits                                  Squilliam Fancyson                                2000\n" +
-                "Being Handsome                                    Squilliam Fancyson                                1996\n" +
                 "----------------------------------------------------------------------------------------------------------------------\n"));
     }
 }

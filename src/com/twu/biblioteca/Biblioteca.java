@@ -45,10 +45,12 @@ public class Biblioteca {
         //System.out.println("Title\tAuthor\t\t\t\tYear Published");
         System.out.println("----------------------------------------------------------------------------------------------------------------------");
         for(Book b:library){
-            String title = b.getTitle();
-            String author = b.getAuthor();
-            String year = Integer.toString(b.getYear());
-            System.out.printf(format,title,author,year);
+            if (b.isAvailable()){
+                String title = b.getTitle();
+                String author = b.getAuthor();
+                String year = Integer.toString(b.getYear());
+                System.out.printf(format,title,author,year);
+            }
         }
         System.out.println("----------------------------------------------------------------------------------------------------------------------");
     }
