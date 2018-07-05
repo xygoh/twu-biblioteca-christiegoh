@@ -51,8 +51,9 @@ public class Tests {
     @Test
     public void testSuccessfulReturn(){
         Biblioteca b = new Biblioteca();
+        b.defaultSetupBooks();
         MainMenu m = new MainMenu(b);
-        si.provideLines("5");
+        si.provideLines("4\nBeing Handsome");
         m.run();
         assertTrue(sor.getLog().contains("Thank you for returning the book"));
     }
@@ -60,10 +61,11 @@ public class Tests {
     @Test
     public void testUnsuccessfulReturn(){
         Biblioteca b = new Biblioteca();
+        b.defaultSetupBooks();
         MainMenu m = new MainMenu(b);
-        si.provideLines("5");
+        si.provideLines("4\nTop 10 Clarinet Hits");
         m.run();
-        assertTrue(sor.getLog().contains("That is not a valid book to return"));
+        assertTrue(sor.getLog().contains("That is not a valid book"));
     }
 
 }

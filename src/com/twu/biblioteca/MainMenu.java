@@ -1,16 +1,11 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.MainMenuItems.CheckOutOption;
-import com.twu.biblioteca.MainMenuItems.ListBooksOption;
-import com.twu.biblioteca.MainMenuItems.MainMenuItem;
-import com.twu.biblioteca.MainMenuItems.QuitOption;
-
+import com.twu.biblioteca.MainMenuItems.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.lang.IllegalArgumentException;
-import java.lang.Boolean.*;
 
 public class MainMenu {
     ArrayList<MainMenuItem> menuOptions;
@@ -22,10 +17,12 @@ public class MainMenu {
         this.biblioteca = biblioteca;
         MainMenuItem m = new ListBooksOption(itemCounter,"List Books",biblioteca);
         MainMenuItem m1 = new QuitOption(itemCounter+=1,"Quit");
-        MainMenuItem m2 = new CheckOutOption(itemCounter+=1,"Checkout",biblioteca);
+        MainMenuItem m2 = new CheckOutOption(itemCounter+=1,"Checkout a Book",biblioteca);
+        MainMenuItem m3 = new ReturnOption(itemCounter+=1,"Return a Book",biblioteca);
         menuOptions.add(m);
         menuOptions.add(m1);
         menuOptions.add(m2);
+        menuOptions.add(m3);
         itemCounter++;
     }
 

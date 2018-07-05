@@ -2,7 +2,6 @@ package com.twu.biblioteca.MainMenuItems;
 
 import com.twu.biblioteca.Biblioteca;
 import com.twu.biblioteca.Book;
-import com.twu.biblioteca.Author;
 import com.twu.biblioteca.User;
 
 import java.io.BufferedReader;
@@ -11,7 +10,7 @@ import java.io.InputStreamReader;
 
 public class CheckOutOption extends MainMenuItem {
     private Biblioteca biblioteca;
-    private User user = null;
+    private User user = null;  // hardcoded for now
 
     public CheckOutOption(int index, String name, Biblioteca biblioteca) {
         super(index, name);
@@ -23,7 +22,7 @@ public class CheckOutOption extends MainMenuItem {
     public void run() {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         Book book;
-        Author author;
+        //Author author;
 
         try{
             System.out.println("What is the title of the book would you like to check out?");

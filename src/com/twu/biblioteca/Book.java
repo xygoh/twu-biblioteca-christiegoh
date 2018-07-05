@@ -6,6 +6,7 @@ public class Book {
     private int year;
     private Author author;
     private boolean available;
+
     private User user=null;
 
     public Book(int id, String title, int year, Author author, boolean available) {
@@ -34,6 +35,10 @@ public class Book {
 
     public boolean isAvailable(){
         return available;
+    }
+
+    public User getUser() {
+        return user;
     }
 
     public void checkOut(User u){
