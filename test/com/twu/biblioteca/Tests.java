@@ -48,18 +48,6 @@ public class Tests {
         m.run();
         assertTrue(sor.getLog().contains("Invalid Option"));
     }
-
-
-    @Test
-    public void testCheckedOutBookNotListedInBookList(){
-        Biblioteca b = new Biblioteca();
-        b.defaultSetupBooks();
-        MainMenu m = new MainMenu(b);
-        si.provideLines("3\nNo, this is Patrick");
-        m.run();
-        assertTrue(sor.getLog().contains("Unsuccessful Checkout"));
-    }
-
     // Successful Return
     // Unsuccessful Return
 
