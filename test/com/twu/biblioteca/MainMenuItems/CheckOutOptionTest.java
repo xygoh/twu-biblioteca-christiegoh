@@ -38,13 +38,13 @@ public class CheckOutOptionTest {
     public void testCheckOutUnsuccessfulBookNotListedInBookList(){
         si.provideLines("3\nNo, this is Patrick");
         m.run();
-        assertTrue(sor.getLog().contains("Unsuccessful Checkout"));
+        assertTrue(sor.getLog().contains("Unsuccessful Checkout. Book does not exist in our system"));
     }
 
     @Test
     public void testCheckOutUnsuccessfulBookUnavailable(){
-        si.provideLines("3\nI Heart Dancing");
+        si.provideLines("3\nBeing Handsome");
         m.run();
-        assertTrue(sor.getLog().contains("Unsuccessful Checkout"));
+        assertTrue(sor.getLog().contains("Unsuccessful Checkout. Book not available"));
     }
 }

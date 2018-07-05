@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Biblioteca {
-    List<Book> library;
+    List<Book> library; // master list of books
     List<Author> authorList;
 
     public Biblioteca(){
@@ -29,7 +29,7 @@ public class Biblioteca {
         Author a = new Author(1,"Squilliam","Fancyson",new ArrayList<Book>());
         Book b1 = new Book(1,"I Heart Dancing",1999,a,true);
         Book b2 = new Book (2, "Top 10 Oboe Hits",2000,a,true);
-        Book b3 = new Book (3, "Being Handsome",1996,a,true);
+        Book b3 = new Book (3, "Being Handsome",1996,a,false);
 
         library.add(b1);
         library.add(b2);
