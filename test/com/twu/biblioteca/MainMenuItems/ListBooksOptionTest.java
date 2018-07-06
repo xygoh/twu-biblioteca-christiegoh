@@ -2,7 +2,7 @@ package com.twu.biblioteca.MainMenuItems;
 
 import com.twu.biblioteca.Biblioteca;
 import com.twu.biblioteca.MainMenu;
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.contrib.java.lang.system.SystemOutRule;
@@ -11,8 +11,8 @@ import org.junit.contrib.java.lang.system.TextFromStandardInputStream;
 import static org.junit.Assert.*;
 
 public class ListBooksOptionTest {
-    Biblioteca b;
-    MainMenu m;
+    static Biblioteca b;
+    static MainMenu m;
 
     @Rule
     public final SystemOutRule sor = new SystemOutRule().enableLog();
@@ -20,8 +20,8 @@ public class ListBooksOptionTest {
     @Rule
     public final TextFromStandardInputStream si = TextFromStandardInputStream.emptyStandardInputStream();
 
-    @Before
-    public void setup(){
+    @BeforeClass
+    public static void setup(){
         b = new Biblioteca();
         b.defaultSetupBooks();
         m = new MainMenu(b);
