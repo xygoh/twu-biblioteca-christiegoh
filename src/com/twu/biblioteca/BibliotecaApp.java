@@ -1,19 +1,22 @@
 package com.twu.biblioteca;
 
 public class BibliotecaApp {
+    Biblioteca b;
+    MainMenu m;
 
-    public static void main(String[] args) {
-        Biblioteca b = new Biblioteca();
-        MainMenu m = new MainMenu(b);
-        start(b,m);
+    public BibliotecaApp() {
+        b = new Biblioteca();
+        b.defaultSetupBooks();
+        m = new MainMenu(b);
     }
 
-    private static void start(Biblioteca b, MainMenu m){
-        printWelcomeMessage();
+    private void start(){
+        System.out.println(" ~ Welcome to Biblioteca ~ ");
         m.run();
     }
 
-    private static void printWelcomeMessage(){
-        System.out.println(" ~ Welcome to Biblioteca ~ ");
+    public static void main(String[] args) {
+        BibliotecaApp bApp = new BibliotecaApp();
+        bApp.start();
     }
 }

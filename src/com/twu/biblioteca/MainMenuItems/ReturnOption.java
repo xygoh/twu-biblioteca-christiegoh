@@ -21,7 +21,6 @@ public class ReturnOption extends MainMenuItem {
     public void run() {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         Book book;
-        //Author author;
 
         try{
             System.out.println("What is the title of the book would you like to return?");
@@ -33,6 +32,8 @@ public class ReturnOption extends MainMenuItem {
                 System.out.println("Thank you for returning the book");
                 book.checkIn();
             }
-        }catch (IOException e){}
+        }catch (IOException e){
+            System.out.println("IO Exception caught: Return Option");
+        }
     }
 }

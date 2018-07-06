@@ -17,8 +17,9 @@ public class BibliotecaAppTest {
 
     @Before
     public void setup(){
-        BibliotecaApp.main(new String[] {});
+       BibliotecaApp.main(new String[] {});
     }
+
     @Test
     public void testWelcomeMessage(){
         assertTrue(sor.getLog().contains(" ~ Welcome to Biblioteca ~ "));

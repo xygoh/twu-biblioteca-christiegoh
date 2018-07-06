@@ -7,7 +7,7 @@ abstract public class MainMenuItem {
     private String name;
 
     public MainMenuItem(int index, String name) {
-        this.index = index-1;
+        this.index = index;
         this.name = name;
     }
 

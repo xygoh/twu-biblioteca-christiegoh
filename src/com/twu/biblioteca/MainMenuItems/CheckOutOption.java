@@ -22,7 +22,6 @@ public class CheckOutOption extends MainMenuItem {
     public void run() {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         Book book;
-        //Author author;
 
         try{
             System.out.println("What is the title of the book would you like to check out?");
@@ -36,6 +35,8 @@ public class CheckOutOption extends MainMenuItem {
                 System.out.println("Thank you! Enjoy your book :)");
                 book.checkOut(user);
             }
-        }catch (IOException e){}
+        }catch (IOException e){
+            System.out.println("IO Exception caught: CheckOut Option");
+        }
     }
 }

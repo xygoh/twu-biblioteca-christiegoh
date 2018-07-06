@@ -2,7 +2,6 @@ package com.twu.biblioteca.MainMenuItems;
 
 import org.junit.Test;
 import org.junit.Rule;
-import static org.junit.Assert.*;
 
 import org.junit.contrib.java.lang.system.ExpectedSystemExit;
 

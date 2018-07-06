@@ -11,14 +11,8 @@ import org.junit.contrib.java.lang.system.TextFromStandardInputStream;
 import static org.junit.Assert.*;
 
 public class MainMenuTest {
-    Biblioteca b;
-    MainMenu m;
-
-    @Before
-    public void setup(){
-        b = new Biblioteca();
-        m = new MainMenu(b);
-    }
+    Biblioteca b = new Biblioteca();
+    MainMenu m = new MainMenu(b);
 
     @Rule
     public final SystemOutRule sor = new SystemOutRule().enableLog();

@@ -1,6 +1,6 @@
 package com.twu.biblioteca;
 
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.Rule;
 import java.util.ArrayList;
@@ -8,14 +8,14 @@ import org.junit.contrib.java.lang.system.SystemOutRule;
 import static org.junit.Assert.*;
 
 public class BibliotecaTest {
-    Biblioteca biblioteca;
-    ArrayList<Book> books = new ArrayList<Book>();
+    static Biblioteca biblioteca;
+    static ArrayList<Book> books = new ArrayList<Book>();
 
     @Rule
     public final SystemOutRule sor = new SystemOutRule().enableLog();
 
-    @Before
-    public void setup(){
+    @BeforeClass
+    public static void setup(){
         for(int i=1;i<=3;i++){
             Author a = new Author(i,"Luffy","Monkey",new ArrayList<>());
             Book b = new Book(i,"Book "+Integer.toString(i),1990+i,a,true);

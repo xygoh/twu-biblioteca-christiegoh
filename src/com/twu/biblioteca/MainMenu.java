@@ -10,15 +10,15 @@ import java.lang.IllegalArgumentException;
 public class MainMenu {
     ArrayList<MainMenuItem> menuOptions;
     Biblioteca biblioteca;
-    int itemCounter=1;
+    int itemCounter=0;
 
     public MainMenu(Biblioteca biblioteca) {
         this.menuOptions = new ArrayList<MainMenuItem>();
         this.biblioteca = biblioteca;
         MainMenuItem m = new ListBooksOption(itemCounter,"List Books",biblioteca);
-        MainMenuItem m1 = new QuitOption(itemCounter+=1,"Quit");
-        MainMenuItem m2 = new CheckOutOption(itemCounter+=1,"Checkout a Book",biblioteca);
-        MainMenuItem m3 = new ReturnOption(itemCounter+=1,"Return a Book",biblioteca);
+        MainMenuItem m1 = new CheckOutOption(itemCounter+=1,"Checkout a Book",biblioteca);
+        MainMenuItem m2 = new ReturnOption(itemCounter+=1,"Return a Book",biblioteca);
+        MainMenuItem m3 = new QuitOption(itemCounter+=1,"Quit");
         menuOptions.add(m);
         menuOptions.add(m1);
         menuOptions.add(m2);
@@ -40,14 +40,11 @@ public class MainMenu {
     public void run(){
         try{
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-            boolean quit = false;
-            while (!quit){
+            while (true){
                 listOptions();
                 System.out.println("Enter Option Number: ");
-                    //int option = 1;
                     int option = Integer.parseInt(br.readLine())-1;
                     selectOption(option);
-                    quit = true;
             }
         }catch (Exception e){}
     }
