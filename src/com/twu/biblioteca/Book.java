@@ -1,7 +1,6 @@
 package com.twu.biblioteca;
 
 public class Book {
-    private int id;
     private String title;
     private int year;
     private Author author;
@@ -9,8 +8,7 @@ public class Book {
 
     private User user=null;
 
-    public Book(int id, String title, int year, Author author, boolean available) {
-        this.id = id;
+    public Book(String title, int year, Author author, boolean available) {
         this.title = title;
         this.year = year;
         this.author = author;
@@ -25,12 +23,8 @@ public class Book {
         return author.firstName + " " + author.lastName;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public int getYear() {
-        return year;
+    public void getDetails(String format){
+        System.out.printf(format,title,author,year);
     }
 
     public boolean isAvailable(){

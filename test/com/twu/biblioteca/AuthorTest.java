@@ -8,10 +8,10 @@ import java.util.Arrays;
 import static org.junit.Assert.*;
 
 public class AuthorTest {
-    Author a = new Author(1,"Squilliam","Fancyson",new ArrayList<Book>());
-    Book b = new Book(1,"I Heart Dancing",1999,a,true);
-    Book b1 = new Book (2, "Top 10 Oboe Hits",2000,a,true);
-    Book b2 = new Book (3, "Being Handsome",1996,a,true);
+    Author a = new Author("Squilliam","Fancyson",new ArrayList<Book>());
+    Book b = new Book("I Heart Dancing",1999,a,true);
+    Book b1 = new Book ("Top 10 Oboe Hits",2000,a,true);
+    Book b2 = new Book ("Being Handsome",1996,a,true);
     ArrayList<Book> books = new ArrayList<Book>(Arrays.asList(b1,b2));
 
     @Test

@@ -10,8 +10,8 @@ import static org.junit.Assert.*;
 
 public class BookTest {
     static List<Book> books = new ArrayList<Book>();
-    static Author a = new Author(1,"Mr","Krabs",books);
-    static Book b = new Book(1,"The Secret Formula",1980,a,true);
+    static Author a = new Author("Mr","Krabs",books);
+    static Book b = new Book("The Secret Formula",1980,a,true);
 
     @BeforeClass
     public static void setup(){

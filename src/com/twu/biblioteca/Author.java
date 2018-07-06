@@ -3,13 +3,11 @@ package com.twu.biblioteca;
 import java.util.List;
 
 public class Author {
-    int id;
     String firstName;
     String lastName;
     List<Book> books;
 
-    public Author(int id, String firstName, String lastName, List<Book> books){
-        this.id=id;
+    public Author(String firstName, String lastName, List<Book> books){
         this.firstName=firstName;
         this.lastName=lastName;
         this.books=books;

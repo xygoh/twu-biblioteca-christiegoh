@@ -17,8 +17,8 @@ public class BibliotecaTest {
     @BeforeClass
     public static void setup(){
         for(int i=1;i<=3;i++){
-            Author a = new Author(i,"Luffy","Monkey",new ArrayList<>());
-            Book b = new Book(i,"Book "+Integer.toString(i),1990+i,a,true);
+            Author a = new Author("Luffy","Monkey",new ArrayList<>());
+            Book b = new Book("Book "+Integer.toString(i),1990+i,a,true);
             books.add(b);
         }
         biblioteca = new Biblioteca(books);
