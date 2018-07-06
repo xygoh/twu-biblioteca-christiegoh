@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Biblioteca {
-    List<Book> library; // master list of books
+    List<Book> library; // master list of books both available and unavailable
 
     public Biblioteca(){
         this.library = new ArrayList<Book>();
