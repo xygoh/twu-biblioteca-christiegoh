@@ -24,7 +24,7 @@ public class Book {
     }
 
     public void getDetails(String format){
-        System.out.printf(format,title,author,year);
+        System.out.printf(format,title,this.getAuthor(),year);
     }
 
     public boolean isAvailable(){
