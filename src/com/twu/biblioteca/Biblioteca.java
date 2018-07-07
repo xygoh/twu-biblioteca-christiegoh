@@ -61,7 +61,7 @@ public class Biblioteca {
         Director d = new Director("Wes","Anderson");
         Movie m1 = new Movie("The Royal Tenenbaums",1999,true,d,new Rating(7));
         Movie m2 = new Movie("Moonrise Kingdom",2000, true,d,new Rating(8));
-        Movie m3 = new Movie("Shopping List", 1961,false,d,new Rating("Unrated"));
+        Movie m3 = new Movie("Shopping List", 1961,false,d,new Rating());
 
         movies.addAll(Arrays.asList(m1,m2,m3));
     }

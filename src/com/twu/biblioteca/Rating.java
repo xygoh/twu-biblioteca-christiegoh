@@ -5,11 +5,16 @@ public class Rating {
     boolean unrated = false;
 
     public Rating(int rating) {
-        this.rating = rating;
+        if (isValid(rating)) {
+            this.rating = rating;
+        }else{
+            System.out.println("Ratings between 1 - 10 only");
+            throw new IllegalArgumentException();
+        }
     }
 
-    public Rating(String s){
-        this.unrated = true; // if s == 'unrated'
+    public Rating(){
+        this.unrated = true;
     }
 
     public String getRating(){
@@ -18,5 +23,12 @@ public class Rating {
         }else{
             return Integer.toString(rating);
         }
+    }
+
+    private static boolean isValid(int rating){
+        if (rating < 1 || rating > 10){
+            return false;
+        }
+        return true;
     }
 }
