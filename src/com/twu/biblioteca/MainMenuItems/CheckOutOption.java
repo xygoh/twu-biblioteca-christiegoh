@@ -34,7 +34,7 @@ public class CheckOutOption extends MainMenuItem {
 
             if (itemType == 1){ // book
                 item = biblioteca.searchLibrary(title);
-            }else if (itemType == 2){
+            }else if (itemType == 2){ // movie
                 item = biblioteca.searchMovies(title);
             }
 

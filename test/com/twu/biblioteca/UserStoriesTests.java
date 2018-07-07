@@ -28,45 +28,25 @@ public class UserStoriesTests {
                 "----------------------------------------------------------------------------------------------------------------------")); // look for heading also think about putting heading for books
     }
 
-// Check-out Movie - As a customer, I would like to check out a movie from the library, so I can enjoy it at home.
+
     @Test
-    public void checkOutMovieSuccessful(){
+    public void checkInMovieSuccessful() {
         Biblioteca b = new Biblioteca();
         b.defaultSetUpMovies();
         MainMenu m = new MainMenu(b);
-        si.provideLines("2\n2\nMoonrise Kingdom");
+        si.provideLines("3\n2\nShopping List");
         m.run();
-        assertTrue(sor.getLog().contains("Thank you! Enjoy"));
-    }
-
-    @Test
-    public void checkOutMovieUnsuccessfulDoesNotExist(){
-        Biblioteca b = new Biblioteca();
-        b.defaultSetUpMovies();
-        MainMenu m = new MainMenu(b);
-        si.provideLines("2\n2\nSunrise Kingdom");
-        m.run();
-        assertTrue(sor.getLog().contains("Unsuccessful Checkout"));
-    }
-
-    @Test
-    public void checkOutMovieUnsuccessfulNotAvailable(){
-        Biblioteca b = new Biblioteca();
-        b.defaultSetUpMovies();
-        MainMenu m = new MainMenu(b);
-        si.provideLines("2\n2\nShopping List");
-        m.run();
-        assertTrue(sor.getLog().contains("Unsuccessful Checkout"));
-    }
-
-    @Test
-    public void checkInMovieSuccessful(){
-        assertTrue(sor.getLog().contains("Thank you for returning the movie"));
+        assertTrue(sor.getLog().contains("Thank you for returning it"));
     }
 
     @Test
     public void checkInMovieUnsuccessful(){
-        assertTrue(sor.getLog().contains("Unsuccessful return"));
+        Biblioteca b = new Biblioteca();
+        b.defaultSetUpMovies();
+        MainMenu m = new MainMenu(b);
+        si.provideLines("3\n2\nMermaid Man & Barnacle Boy Returns");
+        m.run();
+        assertTrue(sor.getLog().contains("Unsuccessful Return"));
     }
 
 /* User Accounts - Login - As a librarian, I want to know who has checked out a book,

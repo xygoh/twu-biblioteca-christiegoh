@@ -2,7 +2,6 @@ package com.twu.biblioteca.MainMenuItems;
 
 import com.twu.biblioteca.Biblioteca;
 import com.twu.biblioteca.MainMenu;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
@@ -30,15 +29,15 @@ public class ReturnOptionTest {
 
     @Test
     public void testSuccessfulReturn(){
-        si.provideLines("3\nBeing Handsome");
+        si.provideLines("3\n1\nBeing Handsome");
         m.run();
-        assertTrue(sor.getLog().contains("Thank you for returning the book"));
+        assertTrue(sor.getLog().contains("Thank you for returning it"));
     }
 
     @Test
     public void testUnsuccessfulReturn(){
-        si.provideLines("3\nTop 10 Clarinet Hits");
+        si.provideLines("3\n1\nTop 10 Clarinet Hits");
         m.run();
-        assertTrue(sor.getLog().contains("That is not a valid book"));
+        assertTrue(sor.getLog().contains("That is not a valid item"));
     }
 }

@@ -21,17 +21,25 @@ public class ReturnOption extends MainMenuItem {
     @Override
     public void run() {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        LibraryItem book;
+        LibraryItem item=null;
 
         try{
-            System.out.println("What is the title of the book would you like to return?");
+            System.out.println("What type of item would you like to return? Type 1 or 2");
+            System.out.println("1. Book");
+            System.out.println("2. Movie");
+            int itemType = Integer.parseInt(br.readLine());
+            System.out.println("What is the title you would you like to return?");
             String title = br.readLine().trim().toLowerCase();
-            book = biblioteca.searchLibrary(title);
-            if(book == null) {
-                System.out.println("Unsuccessful Return. That is not a valid book. It does not exist in our system.");
+            if (itemType == 1){ // book
+                item = biblioteca.searchLibrary(title);
+            }else if (itemType == 2){ // movie
+                item = biblioteca.searchMovies(title);
+            }
+            if(item == null) {
+                System.out.println("Unsuccessful Return. That is not a valid item. It does not exist in our system.");
             }else{
-                System.out.println("Thank you for returning the book");
-                book.checkIn();
+                System.out.println("Thank you for returning it");
+                item.checkIn();
             }
         }catch (IOException e){
             System.out.println("IO Exception caught: Return Option");
