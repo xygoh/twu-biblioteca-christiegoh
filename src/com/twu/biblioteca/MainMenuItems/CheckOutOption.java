@@ -1,7 +1,7 @@
 package com.twu.biblioteca.MainMenuItems;
 
 import com.twu.biblioteca.Biblioteca;
-import com.twu.biblioteca.Book;
+import com.twu.biblioteca.LibraryItems.Book;
 import com.twu.biblioteca.User;
 
 import java.io.BufferedReader;

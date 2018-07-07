@@ -2,7 +2,7 @@ package com.twu.biblioteca.MainMenuItems;
 
 import com.twu.biblioteca.User;
 import com.twu.biblioteca.Biblioteca;
-import com.twu.biblioteca.Book;
+import com.twu.biblioteca.LibraryItems.Book;
 
 import java.io.BufferedReader;
 import java.io.IOException;

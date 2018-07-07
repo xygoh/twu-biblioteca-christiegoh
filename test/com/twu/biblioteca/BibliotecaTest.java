@@ -1,5 +1,7 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.LibraryItems.Book;
+import com.twu.biblioteca.Persons.Author;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.Rule;

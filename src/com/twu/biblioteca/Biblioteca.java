@@ -1,5 +1,12 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.LibraryItems.LibraryItem;
+import com.twu.biblioteca.LibraryItems.Book;
+import com.twu.biblioteca.LibraryItems.Movie;
+import com.twu.biblioteca.Persons.Author;
+import com.twu.biblioteca.Persons.Director;
+import com.twu.biblioteca.Persons.Person;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
@@ -23,7 +30,7 @@ public class Biblioteca {
     }
 
     public void defaultSetupBooks(){
-        Author a = new Author("Squilliam","Fancyson",new ArrayList<Book>());
+        Author a = new Author("Squilliam","Fancyson",new ArrayList<LibraryItem>());
         Book b1 = new Book("I Heart Dancing",1999,a,true);
         Book b2 = new Book ("Top 10 Oboe Hits",2000,a,true);
         Book b3 = new Book ( "Being Handsome",1996,a,false);
@@ -59,9 +66,9 @@ public class Biblioteca {
 
     public void defaultSetUpMovies(){
         Director d = new Director("Wes","Anderson");
-        Movie m1 = new Movie("The Royal Tenenbaums",1999,true,d,new Rating(7));
-        Movie m2 = new Movie("Moonrise Kingdom",2000, true,d,new Rating(8));
-        Movie m3 = new Movie("Shopping List", 1961,false,d,new Rating());
+        Movie m1 = new Movie("The Royal Tenenbaums",1999,d,true,new Rating(7));
+        Movie m2 = new Movie("Moonrise Kingdom",2000,d,true,new Rating(8));
+        Movie m3 = new Movie("Shopping List", 1961,d,false,new Rating());
 
         movies.addAll(Arrays.asList(m1,m2,m3));
     }

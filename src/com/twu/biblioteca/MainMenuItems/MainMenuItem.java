@@ -1,7 +1,5 @@
 package com.twu.biblioteca.MainMenuItems;
 
-import com.twu.biblioteca.Biblioteca;
-
 abstract public class MainMenuItem {
     private int index;
     private String name;
