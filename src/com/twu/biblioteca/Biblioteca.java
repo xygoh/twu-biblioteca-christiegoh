@@ -47,11 +47,7 @@ public class Biblioteca {
         System.out.println("");
         System.out.printf(format,"Title","Author","Year Published");
         System.out.println("----------------------------------------------------------------------------------------------------------------------");
-        for(Book b:library){
-            if (b.isAvailable()){
-                b.getDetails(format);
-            }
-        }
+        this.listItems(library,format);
         System.out.println("----------------------------------------------------------------------------------------------------------------------");
     }
 
@@ -78,11 +74,15 @@ public class Biblioteca {
         System.out.println("");
         System.out.printf(format,"Title","Director","Year","Rating");
         System.out.println("----------------------------------------------------------------------------------------------------------------------");
-        for(Movie m:movies){
-            if (m.isAvailable()){
-                m.getDetails(format);
+        this.listItems(movies,format);
+        System.out.println("----------------------------------------------------------------------------------------------------------------------");
+    }
+
+    private void listItems(List<? extends LibraryItem> items,String format){
+        for(LibraryItem i : items){
+            if (i.isAvailable()){
+                i.getDetails(format);
             }
         }
-        System.out.println("----------------------------------------------------------------------------------------------------------------------");
     }
 }
