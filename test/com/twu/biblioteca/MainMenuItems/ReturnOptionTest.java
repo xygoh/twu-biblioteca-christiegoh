@@ -24,20 +24,35 @@ public class ReturnOptionTest {
     public static void setup(){
         b = new Biblioteca();
         b.defaultSetupBooks();
+        b.defaultSetUpMovies();
         m = new MainMenu(b);
     }
 
     @Test
-    public void testSuccessfulReturn(){
+    public void testSuccessfulReturn_Book(){
         si.provideLines("3\n1\nBeing Handsome");
         m.run();
         assertTrue(sor.getLog().contains("Thank you for returning it"));
     }
 
     @Test
-    public void testUnsuccessfulReturn(){
+    public void testUnsuccessfulReturn_Book(){
         si.provideLines("3\n1\nTop 10 Clarinet Hits");
         m.run();
         assertTrue(sor.getLog().contains("That is not a valid item"));
+    }
+
+    @Test
+    public void testSuccessfulReturn_Movie() {
+        si.provideLines("3\n2\nShopping List");
+        m.run();
+        assertTrue(sor.getLog().contains("Thank you for returning it"));
+    }
+
+    @Test
+    public void testUnsuccessfulReturn_Movie(){
+        si.provideLines("3\n2\nMermaid Man & Barnacle Boy Returns");
+        m.run();
+        assertTrue(sor.getLog().contains("Unsuccessful Return"));
     }
 }

@@ -28,27 +28,6 @@ public class UserStoriesTests {
                 "----------------------------------------------------------------------------------------------------------------------")); // look for heading also think about putting heading for books
     }
 
-
-    @Test
-    public void checkInMovieSuccessful() {
-        Biblioteca b = new Biblioteca();
-        b.defaultSetUpMovies();
-        MainMenu m = new MainMenu(b);
-        si.provideLines("3\n2\nShopping List");
-        m.run();
-        assertTrue(sor.getLog().contains("Thank you for returning it"));
-    }
-
-    @Test
-    public void checkInMovieUnsuccessful(){
-        Biblioteca b = new Biblioteca();
-        b.defaultSetUpMovies();
-        MainMenu m = new MainMenu(b);
-        si.provideLines("3\n2\nMermaid Man & Barnacle Boy Returns");
-        m.run();
-        assertTrue(sor.getLog().contains("Unsuccessful Return"));
-    }
-
 /* User Accounts - Login - As a librarian, I want to know who has checked out a book,
  so that I can hold them accountable for returning it. Users must now login using their library number
  (which is in the format xxx-xxxx) and a password in order to check-out and return books.
