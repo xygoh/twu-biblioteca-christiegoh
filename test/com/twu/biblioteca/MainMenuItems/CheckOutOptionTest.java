@@ -29,7 +29,7 @@ public class CheckOutOptionTest {
     }
 
     @Test
-    public void testCheckoutSuccessful() {
+    public void testCheckoutBookSuccessful() {
         si.provideLines("2\n1\nI Heart Dancing");
         m.run();
         assertTrue(sor.getLog().contains("Thank you! Enjoy"));
@@ -47,5 +47,26 @@ public class CheckOutOptionTest {
         si.provideLines("2\n1\nBeing Handsome");
         m.run();
         assertTrue(sor.getLog().contains("Unsuccessful Checkout. Item not available"));
+    }
+
+    @Test
+    public void checkOutMovieSuccessful(){
+        si.provideLines("2\n2\nMoonrise Kingdom");
+        m.run();
+        assertTrue(sor.getLog().contains("Thank you! Enjoy"));
+    }
+
+    @Test
+    public void checkOutMovieUnsuccessfulDoesNotExist(){
+        si.provideLines("2\n2\nSunrise Kingdom");
+        m.run();
+        assertTrue(sor.getLog().contains("Unsuccessful Checkout"));
+    }
+
+    @Test
+    public void checkOutMovieUnsuccessfulNotAvailable(){
+        si.provideLines("2\n2\nShopping List");
+        m.run();
+        assertTrue(sor.getLog().contains("Unsuccessful Checkout"));
     }
 }
