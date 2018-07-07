@@ -31,7 +31,12 @@ public class UserStoriesTests {
 // Check-out Movie - As a customer, I would like to check out a movie from the library, so I can enjoy it at home.
     @Test
     public void checkOutMovieSuccessful(){
-        assertTrue(sor.getLog().contains("Successful Checkout"));
+        Biblioteca b = new Biblioteca();
+        b.defaultSetUpMovies();
+        MainMenu m = new MainMenu(b);
+        si.provideLines("2\n2\nMoonrise Kingdom");
+        m.run();
+        assertTrue(sor.getLog().contains("Thank you! Enjoy"));
     }
 
     @Test

@@ -30,22 +30,22 @@ public class CheckOutOptionTest {
 
     @Test
     public void testCheckoutSuccessful() {
-        si.provideLines("2\nI Heart Dancing");
+        si.provideLines("2\n1\nI Heart Dancing");
         m.run();
-        assertTrue(sor.getLog().contains("Thank you! Enjoy your book"));
+        assertTrue(sor.getLog().contains("Thank you! Enjoy"));
     }
 
     @Test
     public void testCheckOutUnsuccessfulBookNotListedInBookList(){
-        si.provideLines("2\nNo, this is Patrick");
+        si.provideLines("2\n1\nNo, this is Patrick");
         m.run();
-        assertTrue(sor.getLog().contains("Unsuccessful Checkout. Book does not exist in our system"));
+        assertTrue(sor.getLog().contains("Unsuccessful Checkout. Item does not exist in our system"));
     }
 
     @Test
     public void testCheckOutUnsuccessfulBookUnavailable(){
-        si.provideLines("2\nBeing Handsome");
+        si.provideLines("2\n1\nBeing Handsome");
         m.run();
-        assertTrue(sor.getLog().contains("Unsuccessful Checkout. Book not available"));
+        assertTrue(sor.getLog().contains("Unsuccessful Checkout. Item not available"));
     }
 }

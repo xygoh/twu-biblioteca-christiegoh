@@ -22,19 +22,29 @@ public class CheckOutOption extends MainMenuItem {
     @Override
     public void run() {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        LibraryItem book;
+        LibraryItem item=null;
 
         try{
-            System.out.println("What is the title of the book would you like to check out?");
+            System.out.println("What type of item would you like to check out? Type 1 or 2");
+            System.out.println("1. Book");
+            System.out.println("2. Movie");
+            int itemType = Integer.parseInt(br.readLine());
+            System.out.println("What is the title you would you like to check out?");
             String title = br.readLine().trim().toLowerCase();
-            book = biblioteca.searchLibrary(title);
-            if(book == null) {
-                System.out.println("Unsuccessful Checkout. Book does not exist in our system.");
-            }else if (!book.isAvailable()){
-                System.out.println("Unsuccessful Checkout. Book not available.");
-            }else if (book.isAvailable()){
-                System.out.println("Thank you! Enjoy your book :)");
-                book.checkOut(user);
+
+            if (itemType == 1){ // book
+                item = biblioteca.searchLibrary(title);
+            }else if (itemType == 2){
+                item = biblioteca.searchMovies(title);
+            }
+
+            if(item == null) {
+                System.out.println("Unsuccessful Checkout. Item does not exist in our system.");
+            }else if (!item.isAvailable()){
+                System.out.println("Unsuccessful Checkout. Item not available.");
+            }else if (item.isAvailable()){
+                System.out.println("Thank you! Enjoy :)");
+                item.checkOut(user);
             }
         }catch (IOException e){
             System.out.println("IO Exception caught: CheckOut Option");
