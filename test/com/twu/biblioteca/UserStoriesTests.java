@@ -40,7 +40,22 @@ public class UserStoriesTests {
     }
 
     @Test
-    public void checkOutMovieUnsuccessful(){
+    public void checkOutMovieUnsuccessfulDoesNotExist(){
+        Biblioteca b = new Biblioteca();
+        b.defaultSetUpMovies();
+        MainMenu m = new MainMenu(b);
+        si.provideLines("2\n2\nSunrise Kingdom");
+        m.run();
+        assertTrue(sor.getLog().contains("Unsuccessful Checkout"));
+    }
+
+    @Test
+    public void checkOutMovieUnsuccessfulNotAvailable(){
+        Biblioteca b = new Biblioteca();
+        b.defaultSetUpMovies();
+        MainMenu m = new MainMenu(b);
+        si.provideLines("2\n2\nShopping List");
+        m.run();
         assertTrue(sor.getLog().contains("Unsuccessful Checkout"));
     }
 
