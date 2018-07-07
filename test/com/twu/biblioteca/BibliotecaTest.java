@@ -40,4 +40,14 @@ public class BibliotecaTest {
         biblioteca.listBooks();
         assertEquals(expected,sor.getLog());
     }
+
+    @Test
+    public void testMovieSetup(){
+        biblioteca.defaultSetUpMovies();
+        assertTrue(biblioteca.movies.get(0).getTitle()=="The Royal Tenenbaums");
+        assertTrue(biblioteca.movies.get(1).getTitle()=="Moonrise Kingdom");
+        assertTrue(biblioteca.movies.get(2).getTitle()=="Shopping List");
+    }
+
+
 }

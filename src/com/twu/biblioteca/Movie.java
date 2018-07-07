@@ -26,7 +26,11 @@ public class Movie {
     }
 
     public void getDetails(String format){
-        System.out.printf(format,title,director,year);
+        System.out.printf(format,title,this.getDirector(),year,rating.getRating());
+    }
+
+    public boolean isAvailable(){
+        return available;
     }
 
     public void checkOut(User u){

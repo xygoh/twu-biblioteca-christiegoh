@@ -17,7 +17,15 @@ public class UserStoriesTests {
 // List Movies - As a customer, I would like to see a list of available movies, so that I can browse for a movie that I might check-out. Movies have a name, year, director and movie rating (from 1-10 or unrated).
     @Test
     public void testListMovies(){
-        assertTrue(sor.getLog().contains("Movies")); // look for heading also think about putting heading for books
+        Biblioteca b = new Biblioteca();
+        b.defaultSetUpMovies();
+        b.listMovies();
+        assertTrue(sor.getLog().contains("\n" +
+                "Title                                   Director                                Year      Rating    \n" +
+                "----------------------------------------------------------------------------------------------------------------------\n" +
+                "The Royal Tenenbaums                    Wes Anderson                            1999      7         \n" +
+                "Moonrise Kingdom                        Wes Anderson                            2000      8         \n" +
+                "----------------------------------------------------------------------------------------------------------------------")); // look for heading also think about putting heading for books
     }
 
 // Check-out Movie - As a customer, I would like to check out a movie from the library, so I can enjoy it at home.
