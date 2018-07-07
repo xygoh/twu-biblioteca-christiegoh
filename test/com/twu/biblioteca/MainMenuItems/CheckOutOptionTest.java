@@ -24,6 +24,7 @@ public class CheckOutOptionTest {
     public static void setup(){
         b = new Biblioteca();
         b.defaultSetupBooks();
+        b.defaultSetUpMovies();
         m = new MainMenu(b);
     }
 

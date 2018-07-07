@@ -2,6 +2,7 @@ package com.twu.biblioteca.MainMenuItems;
 
 import com.twu.biblioteca.Biblioteca;
 import com.twu.biblioteca.LibraryItems.Book;
+import com.twu.biblioteca.LibraryItems.LibraryItem;
 import com.twu.biblioteca.User;
 
 import java.io.BufferedReader;
@@ -21,7 +22,7 @@ public class CheckOutOption extends MainMenuItem {
     @Override
     public void run() {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        Book book;
+        LibraryItem book;
 
         try{
             System.out.println("What is the title of the book would you like to check out?");

@@ -51,10 +51,18 @@ public class Biblioteca {
         System.out.println("----------------------------------------------------------------------------------------------------------------------");
     }
 
-    public Book searchLibrary(String bookTitle){
-        for (Book b: library){
-            if (b.getTitle().trim().toLowerCase().equals(bookTitle)){
-                return b;
+    public LibraryItem searchLibrary(String bookTitle){
+        return this.searchItem(library,bookTitle);
+    }
+
+    public LibraryItem searchMovies(String movieTitle){
+        return this.searchItem(movies,movieTitle);
+    }
+
+    private LibraryItem searchItem(List<? extends LibraryItem> items, String title){
+        for (LibraryItem i : items){
+            if (i.getTitle().trim().toLowerCase().equals(title)){
+                return i;
             }
         }
         return null;
