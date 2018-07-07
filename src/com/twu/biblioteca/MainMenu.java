@@ -15,9 +15,9 @@ public class MainMenu {
     public MainMenu(Biblioteca biblioteca) {
         this.menuOptions = new ArrayList<MainMenuItem>();
         this.biblioteca = biblioteca;
-        MainMenuItem m = new ListBooksOption(itemCounter,"List Books",biblioteca);
-        MainMenuItem m1 = new CheckOutOption(itemCounter+=1,"Checkout a Book",biblioteca);
-        MainMenuItem m2 = new ReturnOption(itemCounter+=1,"Return a Book",biblioteca);
+        MainMenuItem m = new ListBooksOption(itemCounter,"Browse",biblioteca);
+        MainMenuItem m1 = new CheckOutOption(itemCounter+=1,"Checkout an Item",biblioteca);
+        MainMenuItem m2 = new ReturnOption(itemCounter+=1,"Return an Item",biblioteca);
         MainMenuItem m3 = new QuitOption(itemCounter+=1,"Quit");
         menuOptions.add(m);
         menuOptions.add(m1);
