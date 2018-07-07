@@ -14,19 +14,7 @@ public class UserStoriesTests {
     @Rule
     public final TextFromStandardInputStream si = TextFromStandardInputStream.emptyStandardInputStream();
 
-// List Movies - As a customer, I would like to see a list of available movies, so that I can browse for a movie that I might check-out. Movies have a name, year, director and movie rating (from 1-10 or unrated).
-    @Test
-    public void testListMovies(){
-        Biblioteca b = new Biblioteca();
-        b.defaultSetUpMovies();
-        b.listMovies();
-        assertTrue(sor.getLog().contains("\n" +
-                "Title                                   Director                                Year      Rating    \n" +
-                "----------------------------------------------------------------------------------------------------------------------\n" +
-                "The Royal Tenenbaums                    Wes Anderson                            1999      7         \n" +
-                "Moonrise Kingdom                        Wes Anderson                            2000      8         \n" +
-                "----------------------------------------------------------------------------------------------------------------------")); // look for heading also think about putting heading for books
-    }
+
 
 /* User Accounts - Login - As a librarian, I want to know who has checked out a book,
  so that I can hold them accountable for returning it. Users must now login using their library number
