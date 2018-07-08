@@ -19,6 +19,7 @@ public class MainMenu {
         MainMenuItem m1 = new CheckOutOption(itemCounter+=1,"Checkout an Item",biblioteca);
         MainMenuItem m2 = new ReturnOption(itemCounter+=1,"Return an Item",biblioteca);
         MainMenuItem m3 = new QuitOption(itemCounter+=1,"Quit");
+        //MainMenuItem m4 = new LoginOption(itemCounter+=1,"Login")
         menuOptions.add(m);
         menuOptions.add(m1);
         menuOptions.add(m2);
