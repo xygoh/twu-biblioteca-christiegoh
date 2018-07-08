@@ -31,7 +31,7 @@ public class UserStoriesTests {
     }
 
     @Test
-    public void userLogin(){
+    public void userLoginSuccessful(){
         // login
         UserManager uMan = new UserManager();
         User u_librarian = new User("000-0000","password","Mr. Librarian","librarian@bangalorelib.com","0123456789",true);
@@ -47,8 +47,28 @@ public class UserStoriesTests {
         si.provideLines("001-000\nilovedogs");
         loginOp.run();
         assertTrue(sor.getLog().contains("Login Successful"));
-        // assert login == true?
     }
+
+    @Test
+    public void userLoginNotSuccessful(){
+        // login
+        UserManager uMan = new UserManager();
+        User u_librarian = new User("000-0000","password","Mr. Librarian","librarian@bangalorelib.com","0123456789",true);
+        User u_cust1 = new User("001-0000","ilovedogs","Beatrice Baudelaire", "beatrice@gmail.com","0123456788",false);
+        uMan.addUser(u_librarian);
+        uMan.addUser(u_cust1);
+        MainMenuItem loginOp = new LoginOption(1,"Login",uMan);
+
+        si.provideLines("000\npassword");
+        loginOp.run();
+        assertTrue(sor.getLog().contains("User doesn't exist in our system"));
+
+        si.provideLines("001-0000\nilovecats");
+        loginOp.run();
+        assertTrue(sor.getLog().contains("Password doesn't match"));
+    }
+
+
 // User Accounts - User information - As a customer,
 // I want to be able to see my
 // user information (name, email address and phone number),

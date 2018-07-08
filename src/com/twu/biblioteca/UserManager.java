@@ -17,11 +17,11 @@ public class UserManager {
     public void login(String libraryNumber, String password) {
         User u = passwordFile.get(libraryNumber);
         if (u == null){
-            // user doesn't exist
+           System.out.println("User doesn't exist in our system");
         }
 
         if (!u.authenticate(password)) {
-            // password does not match
+            System.out.println("Password doesn't match");
         }else {
             System.out.println("Login Successful!");
             currentUser = u;
