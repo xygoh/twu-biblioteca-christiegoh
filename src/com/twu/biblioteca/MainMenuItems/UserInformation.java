@@ -12,6 +12,6 @@ public class UserInformation extends MainMenuItem {
 
     @Override
     public void run() {
-
+        uMan.displayUserAccounts();
     }
 }
