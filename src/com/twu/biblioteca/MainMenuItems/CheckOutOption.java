@@ -1,9 +1,7 @@
 package com.twu.biblioteca.MainMenuItems;
 
 import com.twu.biblioteca.Biblioteca;
-import com.twu.biblioteca.LibraryItems.Book;
 import com.twu.biblioteca.LibraryItems.LibraryItem;
-import com.twu.biblioteca.User;
 import com.twu.biblioteca.UserManager;
 
 import java.io.BufferedReader;
@@ -29,6 +27,7 @@ public class CheckOutOption extends MainMenuItem {
             System.out.println("What type of item would you like to check out? Type 1 or 2");
             System.out.println("1. Book");
             System.out.println("2. Movie");
+
             int itemType = Integer.parseInt(br.readLine());
             System.out.println("What is the title you would you like to check out?");
             String title = br.readLine().trim().toLowerCase();

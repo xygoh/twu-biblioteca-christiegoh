@@ -3,7 +3,6 @@ package com.twu.biblioteca;
 import com.twu.biblioteca.LibraryItems.LibraryItem;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class User {

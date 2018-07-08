@@ -51,6 +51,7 @@ public class UserManager {
     public void displayUserAccounts(){
         String format = "%-20s%-25s%-30s%-25s%-25s%n";
         System.out.printf(format,"Library No.","Name","E-mail","Phone No.","Borrowed Items?");
+
         if (currentUser.isLibrarian()){
             // print all user accounts
             Set<String> keys = passwordFile.keySet();
@@ -58,7 +59,8 @@ public class UserManager {
                 User u = passwordFile.get(key);
                 u.getInfo(format);
             }
-        }else {
+
+        }else { // print own's info
             currentUser.getInfo(format);
         }
     }

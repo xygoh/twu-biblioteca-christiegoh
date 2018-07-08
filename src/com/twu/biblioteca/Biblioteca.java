@@ -5,7 +5,6 @@ import com.twu.biblioteca.LibraryItems.Book;
 import com.twu.biblioteca.LibraryItems.Movie;
 import com.twu.biblioteca.Persons.Author;
 import com.twu.biblioteca.Persons.Director;
-import com.twu.biblioteca.Persons.Person;
 
 import java.util.Arrays;
 import java.util.List;
