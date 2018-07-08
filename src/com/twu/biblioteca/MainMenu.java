@@ -15,34 +15,19 @@ public class MainMenu {
     ArrayList<MainMenuItem> menuOptions_NoUserLoggedIn;
     UserManager userManager;
     Biblioteca biblioteca;
-    int itemCounter=0;
-
-    public MainMenu(Biblioteca biblioteca) {
-        this.menuOptions = new ArrayList<MainMenuItem>();
-        this.biblioteca = biblioteca;
-        MainMenuItem m = new ListBooksOption(itemCounter,"Browse",biblioteca);
-        MainMenuItem m1 = new CheckOutOption(itemCounter+=1,"Checkout an Item",biblioteca);
-        MainMenuItem m2 = new ReturnOption(itemCounter+=1,"Return an Item",biblioteca);
-        MainMenuItem m3 = new QuitOption(itemCounter+=1,"Quit");
-        //MainMenuItem m4 = new LoginOption(itemCounter+=1,"Login")
-        menuOptions.add(m);
-        menuOptions.add(m1);
-        menuOptions.add(m2);
-        menuOptions.add(m3);
-        itemCounter++;
-    }
 
     public MainMenu(Biblioteca biblioteca, UserManager userManager) {
         this.menuOptions = null;
         this.biblioteca = biblioteca;
         this.userManager = userManager;
-        MainMenuItem m1 = new LoginOption(itemCounter,"Login",userManager);
-        MainMenuItem m2 = new ListBooksOption(itemCounter+=1,"Browse",biblioteca);
-        MainMenuItem m3 = new CheckOutOption(itemCounter+=1,"Checkout an Item",biblioteca);
-        MainMenuItem m4 = new ReturnOption(itemCounter+=1,"Return an Item",biblioteca);
-        MainMenuItem m5 = new UserInformation(itemCounter+=1,"Display User Information",userManager);
-        MainMenuItem m6 = new QuitOption(itemCounter+=1,"Quit");
-        MainMenuItem m7 = new LogoutOption(itemCounter+=1,"Logout",userManager);
+
+        MainMenuItem m1 = new LoginOption("Login",userManager);
+        MainMenuItem m2 = new ListBooksOption("Browse",biblioteca);
+        MainMenuItem m3 = new CheckOutOption("Checkout an Item",biblioteca,userManager);
+        MainMenuItem m4 = new ReturnOption("Return an Item",biblioteca,userManager);
+        MainMenuItem m5 = new UserInformation("Display User Information",userManager);
+        MainMenuItem m6 = new QuitOption("Quit");
+        MainMenuItem m7 = new LogoutOption("Logout",userManager);
 
         menuOptions_NoUserLoggedIn = new ArrayList<>();
         menuOptions_LoggedIn = new ArrayList<>();

@@ -5,8 +5,8 @@ import com.twu.biblioteca.UserManager;
 public class LogoutOption extends MainMenuItem {
     private UserManager userManager;
 
-    public LogoutOption(int index, String name, UserManager userManager) {
-        super(index, name);
+    public LogoutOption(String name, UserManager userManager) {
+        super(name);
         this.userManager = userManager;
     }
 

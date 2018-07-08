@@ -4,6 +4,7 @@ import com.twu.biblioteca.Biblioteca;
 import com.twu.biblioteca.LibraryItems.Book;
 import com.twu.biblioteca.LibraryItems.LibraryItem;
 import com.twu.biblioteca.User;
+import com.twu.biblioteca.UserManager;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,12 +12,12 @@ import java.io.InputStreamReader;
 
 public class CheckOutOption extends MainMenuItem {
     private Biblioteca biblioteca;
-    private User user = null;  // hardcoded for now
+    private UserManager userMan;
 
-    public CheckOutOption(int index, String name, Biblioteca biblioteca) {
-        super(index, name);
+    public CheckOutOption(String name, Biblioteca biblioteca, UserManager userMan) {
+        super(name);
         this.biblioteca = biblioteca;
-        //this.user = user;
+        this.userMan = userMan;
     }
 
     @Override
@@ -44,7 +45,7 @@ public class CheckOutOption extends MainMenuItem {
                 System.out.println("Unsuccessful Checkout. Item not available.");
             }else if (item.isAvailable()){
                 System.out.println("Thank you! Enjoy :)");
-                item.checkOut(user);
+                userMan.checkOut(item);
             }
         }catch (IOException e){
             System.out.println("IO Exception caught: CheckOut Option");

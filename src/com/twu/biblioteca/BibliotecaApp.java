@@ -3,11 +3,17 @@ package com.twu.biblioteca;
 public class BibliotecaApp {
     Biblioteca b;
     MainMenu m;
+    UserManager userMan;
 
     public BibliotecaApp() {
         b = new Biblioteca();
         b.defaultSetupBooks();
-        m = new MainMenu(b);
+        b.defaultSetUpMovies();
+
+        userMan = new UserManager();
+        userMan.defaultSetupUsers();
+
+        m = new MainMenu(b,userMan);
     }
 
     private void start(){

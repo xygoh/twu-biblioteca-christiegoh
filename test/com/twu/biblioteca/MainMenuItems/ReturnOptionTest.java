@@ -2,6 +2,7 @@ package com.twu.biblioteca.MainMenuItems;
 
 import com.twu.biblioteca.Biblioteca;
 import com.twu.biblioteca.MainMenu;
+import com.twu.biblioteca.UserManager;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
@@ -13,6 +14,7 @@ import static org.junit.Assert.*;
 public class ReturnOptionTest {
     static Biblioteca b;
     static MainMenu m;
+    private static UserManager userMan;
 
     @Rule
     public final SystemOutRule sor = new SystemOutRule().enableLog();
@@ -25,7 +27,11 @@ public class ReturnOptionTest {
         b = new Biblioteca();
         b.defaultSetupBooks();
         b.defaultSetUpMovies();
-        m = new MainMenu(b);
+
+        userMan = new UserManager();
+        userMan.defaultSetupUsers();
+
+        m = new MainMenu(b,userMan);
     }
 
     @Test
@@ -37,9 +43,9 @@ public class ReturnOptionTest {
 
     @Test
     public void testUnsuccessfulReturn_Book(){
-        si.provideLines("3\n1\nTop 10 Clarinet Hits");
+        si.provideLines("1\n001-0000\nilovedogs\n3\n1\nTop 10 Clarinet Hits");
         m.run();
-        assertTrue(sor.getLog().contains("That is not a valid item"));
+        assertTrue(sor.getLog().contains("Unsuccessful Return"));
     }
 
     @Test

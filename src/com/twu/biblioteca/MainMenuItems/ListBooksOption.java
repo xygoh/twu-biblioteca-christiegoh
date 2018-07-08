@@ -9,8 +9,8 @@ import java.io.InputStreamReader;
 public class ListBooksOption extends MainMenuItem {
     private Biblioteca biblioteca;
 
-    public ListBooksOption(int index, String name,Biblioteca biblioteca){
-        super(index,name);
+    public ListBooksOption(String name,Biblioteca biblioteca){
+        super(name);
         this.biblioteca = biblioteca;
     }
 

@@ -8,8 +8,8 @@ import java.io.InputStreamReader;
 public class LoginOption extends MainMenuItem {
     private UserManager userManager;
 
-    public LoginOption(int index, String name, UserManager userManager) {
-        super(index, name);
+    public LoginOption(String name, UserManager userManager) {
+        super(name);
         this.userManager = userManager;
     }
 

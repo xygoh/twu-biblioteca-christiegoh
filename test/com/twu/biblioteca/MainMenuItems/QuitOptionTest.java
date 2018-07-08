@@ -11,7 +11,7 @@ public class QuitOptionTest {
 
     @Test
     public void testQuitWhenRun(){
-        QuitOption q = new QuitOption(1,"Quit");
+        QuitOption q = new QuitOption("Quit");
         exit.expectSystemExitWithStatus(0);
         q.run();
     }

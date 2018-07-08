@@ -1,21 +1,21 @@
 package com.twu.biblioteca.MainMenuItems;
 
 import com.twu.biblioteca.LibraryItems.LibraryItem;
-import com.twu.biblioteca.User;
 import com.twu.biblioteca.Biblioteca;
-import com.twu.biblioteca.LibraryItems.Book;
+import com.twu.biblioteca.UserManager;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class ReturnOption extends MainMenuItem {
-    private Biblioteca biblioteca; // make biblioteca setup and protected in abstract class?
-    private User user = null;
+    private Biblioteca biblioteca;
+    private UserManager userMan;
 
-    public ReturnOption(int index, String name, Biblioteca biblioteca) {
-        super(index, name);
+    public ReturnOption(String name, Biblioteca biblioteca, UserManager userMan) {
+        super(name);
         this.biblioteca = biblioteca;
+        this.userMan = userMan;
     }
 
     @Override
@@ -39,7 +39,7 @@ public class ReturnOption extends MainMenuItem {
                 System.out.println("Unsuccessful Return. That is not a valid item. It does not exist in our system.");
             }else{
                 System.out.println("Thank you for returning it");
-                item.checkIn();
+                userMan.checkIn(item);
             }
         }catch (IOException e){
             System.out.println("IO Exception caught: Return Option");

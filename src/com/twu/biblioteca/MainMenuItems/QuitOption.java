@@ -4,8 +4,8 @@ import com.twu.biblioteca.Biblioteca;
 
 public class QuitOption extends MainMenuItem {
 
-    public QuitOption(int index, String name) {
-        super(index, name);
+    public QuitOption(String name) {
+        super(name);
     }
 
     @Override

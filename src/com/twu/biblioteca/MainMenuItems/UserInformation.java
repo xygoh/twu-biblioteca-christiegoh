@@ -5,8 +5,8 @@ import com.twu.biblioteca.UserManager;
 public class UserInformation extends MainMenuItem {
     private UserManager uMan;
 
-    public UserInformation(int index, String name, UserManager uMan) {
-        super(index, name);
+    public UserInformation(String name, UserManager uMan) {
+        super(name);
         this.uMan = uMan;
     }
 

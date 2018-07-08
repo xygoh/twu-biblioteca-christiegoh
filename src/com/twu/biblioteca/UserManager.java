@@ -1,5 +1,7 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.LibraryItems.LibraryItem;
+
 import java.util.Hashtable;
 import java.util.Set;
 
@@ -33,6 +35,10 @@ public class UserManager {
         passwordFile.put(u.getLibraryNumber(),u);
     }
 
+    public User getCurrentUser(){
+        return currentUser;
+    }
+
     public void setCurrentUser(User currUser){
         currentUser = currUser;
     }
@@ -52,7 +58,6 @@ public class UserManager {
                 User u = passwordFile.get(key);
                 u.getInfo(format);
             }
-            System.out.println("User Accounts");
         }else {
             currentUser.getInfo(format);
         }
@@ -66,5 +71,15 @@ public class UserManager {
         this.addUser(u_librarian);
         this.addUser(u_cust1);
         this.addUser(u_cust2);
+    }
+
+    public void checkIn(LibraryItem li) {
+        li.checkIn();
+        currentUser.returnsItem(li);
+    }
+
+    public void checkOut(LibraryItem li) {
+        li.checkOut(currentUser);
+        currentUser.borrowsItem(li);
     }
 }

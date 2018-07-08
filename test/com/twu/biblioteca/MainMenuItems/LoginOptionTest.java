@@ -28,7 +28,7 @@ public class LoginOptionTest {
         User u_cust1 = new User("001-0000","ilovedogs","Beatrice Baudelaire", "beatrice@gmail.com","0123456788",false);
         uMan.addUser(u_librarian);
         uMan.addUser(u_cust1);
-        loginOp = new LoginOption(1,"Login",uMan);
+        loginOp = new LoginOption("Login",uMan);
     }
 
     @Test

@@ -2,6 +2,7 @@ package com.twu.biblioteca.MainMenuItems;
 
 import com.twu.biblioteca.Biblioteca;
 import com.twu.biblioteca.MainMenu;
+import com.twu.biblioteca.UserManager;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
@@ -13,6 +14,7 @@ import static org.junit.Assert.*;
 public class ListBooksOptionTest {
     static Biblioteca b;
     static MainMenu m;
+    private static UserManager userMan;
 
     @Rule
     public final SystemOutRule sor = new SystemOutRule().enableLog();
@@ -25,12 +27,16 @@ public class ListBooksOptionTest {
         b = new Biblioteca();
         b.defaultSetupBooks();
         b.defaultSetUpMovies();
-        m = new MainMenu(b);
+
+        userMan = new UserManager();
+        userMan.defaultSetupUsers();
+
+        m = new MainMenu(b,userMan);
     }
 
     @Test
     public void testBooksOnlyAvailableBooksListed(){
-        si.provideLines("1\n1");
+        si.provideLines("2\n1");
         m.run();
         assertTrue(sor.getLog().contains("\nTitle                                             Author                                            Year Published\n" +
                 "----------------------------------------------------------------------------------------------------------------------\n" +
@@ -42,7 +48,7 @@ public class ListBooksOptionTest {
     // List Movies - As a customer, I would like to see a list of available movies, so that I can browse for a movie that I might check-out. Movies have a name, year, director and movie rating (from 1-10 or unrated).
     @Test
     public void testListMovies(){
-        si.provideLines("1\n2");
+        si.provideLines("2\n2");
         m.run();
         assertTrue(sor.getLog().contains("\n" +
                 "Title                                   Director                                Year      Rating    \n" +

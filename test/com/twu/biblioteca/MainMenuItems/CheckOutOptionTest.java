@@ -2,6 +2,7 @@ package com.twu.biblioteca.MainMenuItems;
 
 import com.twu.biblioteca.Biblioteca;
 import com.twu.biblioteca.MainMenu;
+import com.twu.biblioteca.UserManager;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
@@ -11,8 +12,9 @@ import org.junit.contrib.java.lang.system.TextFromStandardInputStream;
 import static org.junit.Assert.*;
 
 public class CheckOutOptionTest {
-    static Biblioteca b;
-    static MainMenu m;
+    private static Biblioteca b;
+    private static MainMenu m;
+    private static UserManager userMan;
 
     @Rule
     public final SystemOutRule sor = new SystemOutRule().enableLog();
@@ -25,12 +27,16 @@ public class CheckOutOptionTest {
         b = new Biblioteca();
         b.defaultSetupBooks();
         b.defaultSetUpMovies();
-        m = new MainMenu(b);
+
+        userMan = new UserManager();
+        userMan.defaultSetupUsers();
+
+        m = new MainMenu(b,userMan);
     }
 
     @Test
     public void testCheckoutBookSuccessful() {
-        si.provideLines("2\n1\nI Heart Dancing");
+        si.provideLines("1\n001-0000\nilovedogs\n2\n1\nI Heart Dancing");
         m.run();
         assertTrue(sor.getLog().contains("Thank you! Enjoy"));
     }

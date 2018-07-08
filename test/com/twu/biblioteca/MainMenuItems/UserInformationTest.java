@@ -34,7 +34,8 @@ public class UserInformationTest {
     public void userAccounts_Librarian(){ // list of userAccounts and books borrowed
         uMan.setCurrentUser(u_librarian);
         uMan.displayUserAccounts();
-        assertTrue(sor.getLog().contains("User Accounts"));
+        assertTrue(sor.getLog().contains("Mr. Librarian"));
+        assertTrue(sor.getLog().contains("Beatrice Baudelaire"));
     }
 
     @Test

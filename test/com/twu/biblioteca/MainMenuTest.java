@@ -48,7 +48,7 @@ public class MainMenuTest {
         assertTrue(sor.getLog().contains("Login"));
         assertFalse(sor.getLog().contains("Checkout an Item"));
     }
-    
+
     @Test
     public void testMenuDisplay_LoggedIn(){
         si.provideLines("1\n000-0000\npassword\n5");
