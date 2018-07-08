@@ -42,12 +42,13 @@ public class MainMenu {
         MainMenuItem m4 = new ReturnOption(itemCounter+=1,"Return an Item",biblioteca);
         MainMenuItem m5 = new UserInformation(itemCounter+=1,"Display User Information",userManager);
         MainMenuItem m6 = new QuitOption(itemCounter+=1,"Quit");
+        MainMenuItem m7 = new LogoutOption(itemCounter+=1,"Logout",userManager);
 
         menuOptions_NoUserLoggedIn = new ArrayList<>();
         menuOptions_LoggedIn = new ArrayList<>();
 
         menuOptions_NoUserLoggedIn.addAll(Arrays.asList(m1,m2,m6));
-        menuOptions_LoggedIn.addAll(Arrays.asList(m2,m3,m4,m5,m6));
+        menuOptions_LoggedIn.addAll(Arrays.asList(m2,m3,m4,m5,m7,m6));
     }
 
     private void listOptions(){
@@ -55,7 +56,7 @@ public class MainMenu {
         System.out.println("MAIN MENU");
         System.out.println("--------------------");
         for (MainMenuItem o : menuOptions){
-            String s = " "+ (o.getIndex()+1) + ". " + o.getName();
+            String s = " "+ (menuOptions.indexOf(o)+1) + ". " + o.getName();
             System.out.println(s);
         }
         System.out.println("--------------------");
