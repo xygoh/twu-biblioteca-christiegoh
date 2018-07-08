@@ -3,6 +3,7 @@ package com.twu.biblioteca;
 import com.twu.biblioteca.LibraryItems.LibraryItem;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class User {
@@ -36,11 +37,25 @@ public class User {
         borrowedItems.remove(li);
     }
 
-    public List<LibraryItem> getBorrowedItems() {
-        return borrowedItems;
+    private List<String> getBorrowedItems() {
+        List<String> itemNames = new ArrayList<String>();
+        for (LibraryItem li : borrowedItems){
+            itemNames.add(li.getTitle());
+
+        }
+        return itemNames;
     }
 
-    public boolean authenticate(String pw) {
+    public boolean authenticate(String pw)
+    {
         return password.equals(pw);
+    }
+
+    public boolean isLibrarian(){
+        return isLibrarian;
+    }
+
+    public void getInfo(String format){
+        System.out.printf(format,libraryNumber,name,email,phoneNumber,getBorrowedItems());
     }
 }
