@@ -1,14 +1,19 @@
 package com.twu.biblioteca;
 
+import com.sun.tools.javac.Main;
 import com.twu.biblioteca.MainMenuItems.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.lang.IllegalArgumentException;
+import java.util.Arrays;
 
 public class MainMenu {
     ArrayList<MainMenuItem> menuOptions;
+    ArrayList<MainMenuItem> menuOptions_LoggedIn;
+    ArrayList<MainMenuItem> menuOptions_NoUserLoggedIn;
+    UserManager userManager;
     Biblioteca biblioteca;
     int itemCounter=0;
 
@@ -27,6 +32,24 @@ public class MainMenu {
         itemCounter++;
     }
 
+    public MainMenu(Biblioteca biblioteca, UserManager userManager) {
+        this.menuOptions = null;
+        this.biblioteca = biblioteca;
+        this.userManager = userManager;
+        MainMenuItem m1 = new LoginOption(itemCounter,"Login",userManager);
+        MainMenuItem m2 = new ListBooksOption(itemCounter+=1,"Browse",biblioteca);
+        MainMenuItem m3 = new CheckOutOption(itemCounter+=1,"Checkout an Item",biblioteca);
+        MainMenuItem m4 = new ReturnOption(itemCounter+=1,"Return an Item",biblioteca);
+        MainMenuItem m5 = new UserInformation(itemCounter+=1,"Display User Information",userManager);
+        MainMenuItem m6 = new QuitOption(itemCounter+=1,"Quit");
+
+        menuOptions_NoUserLoggedIn = new ArrayList<>();
+        menuOptions_LoggedIn = new ArrayList<>();
+
+        menuOptions_NoUserLoggedIn.addAll(Arrays.asList(m1,m2,m6));
+        menuOptions_LoggedIn.addAll(Arrays.asList(m2,m3,m4,m5,m6));
+    }
+
     private void listOptions(){
         System.out.println("");
         System.out.println("MAIN MENU");
@@ -42,10 +65,15 @@ public class MainMenu {
         try{
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             while (true){
+                if (userManager.isLoggedIn()){
+                    menuOptions = menuOptions_LoggedIn;
+                }else {
+                    menuOptions = menuOptions_NoUserLoggedIn;
+                }
                 listOptions();
                 System.out.println("Enter Option Number: ");
-                    int option = Integer.parseInt(br.readLine())-1;
-                    selectOption(option);
+                int option = Integer.parseInt(br.readLine())-1;
+                selectOption(option);
             }
         }catch (Exception e){}
     }

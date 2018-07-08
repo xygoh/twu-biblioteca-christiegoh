@@ -37,6 +37,10 @@ public class UserManager {
         currentUser = currUser;
     }
 
+    public boolean isLoggedIn(){
+        return currentUser != null;
+    }
+
     // library number, name, email, phone number, borrowed Items
     public void displayUserAccounts(){
         String format = "%-20s%-25s%-30s%-25s%-25s%n";
@@ -52,5 +56,15 @@ public class UserManager {
         }else {
             currentUser.getInfo(format);
         }
+    }
+
+    public void defaultSetupUsers(){
+        User u_librarian = new User("000-0000","password","Mr. Librarian","librarian@bangalorelib.com","0123456789",true);
+        User u_cust1 = new User("001-0000","ilovedogs","Beatrice Baudelaire", "beatrice@gmail.com","0123456788",false);
+        User u_cust2 = new User("001-0001","123456","Al Funcoot", "notOlaf@gmail.com","0123456777",false);
+
+        this.addUser(u_librarian);
+        this.addUser(u_cust1);
+        this.addUser(u_cust2);
     }
 }
