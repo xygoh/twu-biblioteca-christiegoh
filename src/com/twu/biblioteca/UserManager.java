@@ -21,13 +21,13 @@ public class UserManager {
         User u = passwordFile.get(libraryNumber);
         if (u == null){
            System.out.println("User doesn't exist in our system");
-        }
-
-        if (!u.authenticate(password)) {
-            System.out.println("Password doesn't match");
         }else {
-            System.out.println("Login Successful!");
-            currentUser = u;
+            if (!u.authenticate(password)) {
+                System.out.println("Password doesn't match");
+            }else {
+                System.out.println("Login Successful!");
+                currentUser = u;
+            }
         }
     }
 
