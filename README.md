@@ -7,7 +7,7 @@ A Library Management System for The Bangalore Public Library.
 ## Running Biblioteca on Your Machine ##
 
 ### Requirements ###
-* JDK 10
+* JDK 10.0
 
 ### Deployment ###
 After compiling on your machine, run BibliotecaApp.java
